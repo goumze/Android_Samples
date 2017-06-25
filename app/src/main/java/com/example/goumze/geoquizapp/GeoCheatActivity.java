@@ -23,7 +23,7 @@ import com.google.android.gms.common.api.GoogleApiClient;
 public class GeoCheatActivity extends AppCompatActivity {
 
     private static final String EXTRA_ANSWER_IS_TRUE = "com.example.goumze.geoquizapp.answer_is_true";
-    private static final String EXTRA_ANSWER_SHOWN = "com.example.goumze.geoquizapp.answer_shown";
+    private static final String EXTRA_ANSWER_SHOWN_I = "com.example.goumze.geoquizapp.answer_shown";
     private boolean mAnswerIsTrue;
     private TextView mAnswerTextView;
     private Button mShowAnswer;
@@ -34,7 +34,7 @@ public class GeoCheatActivity extends AppCompatActivity {
     private GoogleApiClient client;
 
     public static boolean wasAnswerShown(Intent result) {
-        return result.getBooleanExtra(EXTRA_ANSWER_SHOWN, false);
+        return result.getBooleanExtra(EXTRA_ANSWER_SHOWN_I, false);
     }
 
     public static Intent newIntent(Context packageContext, boolean answerIsTrue) {
@@ -111,7 +111,7 @@ public class GeoCheatActivity extends AppCompatActivity {
     private void setAnswerShownResult(boolean isAnswerShown) {
         Log.i("GeoCheatActivity", "setAnswerShownResult:" + isAnswerShown);
         Intent data = new Intent();
-        data.putExtra(EXTRA_ANSWER_SHOWN, isAnswerShown);
+        data.putExtra(EXTRA_ANSWER_SHOWN_I, isAnswerShown);
         setResult(RESULT_OK, data);
     }
 
